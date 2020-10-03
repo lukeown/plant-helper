@@ -10,19 +10,27 @@
 </head>
 <body>
     <script src="script.js" async defer></script>
-    <div class="wrapper">
-        <header>
-            <div class="banner">
-                <h1>Planter</h1>
-            </div>
-            <div class="main-nav">
-                <p>Index</p>
-                <p>Submit</p>
-                <p>About</p>
-            </div>
-        </header>
+    <header>
+        <div class="banner">
+            <h1>Planter</h1>
+        </div>
+        <div class="dashboard">
+            <form id="myForm">
+                <h3>Plant Request</h3>
+                <div>
+                    <label for="name"></label>
+                    <input type="text" id="shortName" placeholder="Nickname"/>
+                </div>
+                <div>
+                    <label for="sciName"></label>
+                    <input type="text" id="sciName" placeholder="Scientific Name"/>
+                </div>
+                <div class="form-submit">
+                    <button id="sub-button" onclick="addPlant()"type='button'>Request</button>
+                </div>
+            </form>
+    </header>
         <main>
-            
             <div class="main-content">
                 <h2>Care tip of the week: Drying Basil</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ullamcorper bibendum massa, vitae faucibus felis facilisis quis. Donec quis tincidunt urna, sed imperdiet felis. Etiam dictum congue sagittis. Vivamus imperdiet at diam quis viverra. Phasellus quis tellus ac eros dignissim facilisis et non sem. Aliquam a tempor elit. Vivamus sollicitudin erat quis faucibus vestibulum. Nunc rutrum vulputate ante eu ultricies. Nunc eu nisl vitae diam luctus tincidunt a vitae dui. Praesent scelerisque cursus massa, a consequat ex consequat non. Quisque imperdiet tortor nec turpis bibendum tincidunt.
