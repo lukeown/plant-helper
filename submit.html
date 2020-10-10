@@ -20,14 +20,14 @@
                 <h3>Plant Request</h3>
                 <div>
                     <label for="name"></label>
-                    <input type="text" id="commonName" placeholder="Common Name"/>
+                    <input onClick="this.setSelectionRange(0, this.value.length)" type="text" id="commonName" placeholder="Common Name"/>
                 </div>
                 <div>
                     <label for="sciName"></label>
-                    <input type="text" id="sciName" placeholder="Scientific Name"/>
+                    <input onClick="this.setSelectionRange(0, this.value.length)" type="text" id="sciName" placeholder="Scientific Name"/>
                 </div>
                 <div class="form-submit">
-                    <button id="sub-button" onclick="addPlant()"type='button'>Request</button>
+                    <button id="sub-button" onclick="addPlant() "type='submit'>Request</button>
                 </div>
             </form>
     </header>
