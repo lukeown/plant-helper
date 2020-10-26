@@ -1,14 +1,19 @@
-var config = {
+
+var firebaseConfig = {
   apiKey: "AIzaSyBfUzdoYxk26tQj7MuQt9CU4Qj7TflOahA",
-  authDomain: "planter-8ffdc.firebaseapp.com",
+  authDomain: "https://planter-8ffdc.firebaseapp.com",
   databaseURL: "https://planter-8ffdc.firebaseio.com",
-  storageBucket: "planter-8ffdc.appspot.com",
+  projectId: "planter-8ffdc",
+  storageBucket: "https://planter-8ffdc.appspot.com",
+  messagingSenderId: "296044948144",
+  appId: "1:296044948144:web:cd95ad326ec47ceda46975",
+  measurementId: "G-Q0CCEDY6NM"
 };
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
 
-firebase.initializeApp(config);
-
-var myFirebase = firebase.database().ref();
-var recommendations = myFirebase.child("recommendations");
+const planterFirebase = firebase.database().ref();
+var recommendations = planterFirebase.child("recommendations");
 var commonName = []
 
 function addPlant() {
