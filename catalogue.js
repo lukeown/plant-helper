@@ -1,6 +1,11 @@
 let plants = [
-    {commonName: "Basil", sciName: "Ocimum basilicum", type: "Herb", light: "Full Sun", water: "Moist", issues: "Overwatering, Too Little Light"},
-    {commonName: "pasil", sciName: "Ocimum basilicum", type: "Herb", light: "Full Sun", water: "Moist", issues: "Overwatering, Too Little Light"},
+    {commonName: "Basil", sciName: "Ocimum basilicum", type: "Herb", light: "Full Light", water: "Moist", issues: "Overwatering, too little light"},
+    {commonName: "Aloe Vera", sciName: "Aloe vera", type: "Succulent", light: "Medium-Full Light", water: "Dry between waterings", issues: "Root and base rot"},
+    {commonName: "Flaming Katy", sciName: "Kalanchoe blossfeldiana", type: "Succulent", light: "Low-Medium Light", water: "Dry between waterings", issues: "Etiolation"},
+    {commonName: "Mistletoe Cactus", sciName: "Stenocereus pruinosus", type: "Cactus", light: "Low-Medium Light", water: "Mostly dry between waterings", issues: "Overwatering, too much light"},
+    {commonName: "Money Tree", sciName: "Pachira aquatica", type: "Tree", light: "Medium-Full Indirect Light", water: "Dry between waterings", issues: "Overwatering, too much light, prone to pests"},
+    {commonName: "Rabbit's Foot Fern", sciName: "Davallia trichomanoides", type: "Fern", light: "Medium Indirect Light", water: "Moist during Spring-Fall", issues: "Underwatering, too much/little light, prone to pests"},
+
 ]
 
 
