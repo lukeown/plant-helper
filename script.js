@@ -19,10 +19,12 @@ var commonName = []
 function addPlant() {
   var commonName = document.getElementById("commonName").value
   var sciName = document.getElementById("sciName").value
+  var notes = document.getElementById("notes").value
 
-  console.log(commonName + ' ' + sciName)
+  console.log(commonName + ' ' + sciName + ': ' + notes)
   recommendations.push({
     "commonName": commonName,
     "sciName": sciName,
+    "notes": notes,
 });
 }
