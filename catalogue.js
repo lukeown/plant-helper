@@ -7,49 +7,36 @@ let plants = [
     {commonName: "Rabbit's Foot Fern", sciName: "Davallia trichomanoides", type: "Fern", light: "Medium Indirect Light", water: "Moist during Spring-Fall", issues: "Underwatering, too much/little light, prone to pests"},
 
 ]
-
-
+for (i = 0; i < plants.length; i++) {
+    addPlantToList(plants[i]); // need to loop through array of plants. If the plant common name matches the common name of the button, it displays.
+    var plant = plants[i]
+    console.log(plant)
+}
 function addPlantToList(plant) { // adds plant and info to button elements
-    var listItem = `<div id="${plant.commonName}"<button onclick='togglePlant()'> ${plant.commonName} </button>` // creates button for plant with id attaining to that plant
     //should make button that targets only the info of that plant - not the whole array - find array method that seperates by index?
-    
-    var info = `<ul id="${plant.commonName}">
+    var info = `<ul style="display:none" id="info-${plant.commonName}" >
                     <li>Scientific Name: ${plant.sciName}
                     <li>Plant Type: ${plant.type}
                     <li>Light Needs: ${plant.light}
                     <li>Water Needs: ${plant.water}
                     <li>Common Issues: ${plant.issues}
-                </ul>` // creates unordered list for specific plant with list items inside that reference specific keys in the plants array
+                </ul>` // creates unordered list for each plant
+    var listItem = `<button onClick='togglePlant(${plant.commonName})'> ${plant.commonName} </button>` // creates button for plant with id attaining to that plant
+    
     document.getElementById('plantInfo').innerHTML += info;
     document.getElementById('plantList').innerHTML += listItem;
 }
-
-
-function togglePlant() { // toggles the plant info card
-    var plantInfo = document.getElementById("plantInfo")//ul by id - UGH I WISH I COULD GET THIS TO WORK;
-    if (plantInfo.style.display === "none") {
-      plantInfo.style.display = "block";
-    } else {
-      plantInfo.style.display = "none";
-    }
-  }
-
-for (i = 0; i < plants.length; i++) {
-    addPlantToList(plants[i]);
+function togglePlant(plantName) { // needs to take id as parameter
+    var componentID = `info-${plantName}`
+    var component = document.getElementById(componentID)
+    console.log(component)
+    console.log(plantName)
+    console.log(componentID)
+    // if ( document.getElementById(componentID).style.display == 'none') {// && document.getElementById(`${plantInfo.firstChild} == ${plant}`)) {//toggle the ul with matching id 
+    //     document.getElementById(componentID).style.display ='block';
+    // } else {
+    //     document.getElementById(componentID).style.display = 'none';//instead of displaying plantInfo, I need to display the info of a specific plant
+    // }
 }
 
-// how the button generator works
-// button generator will make buttons for every commonName in the plants array, with the id matching its commonName
-// var listItem = `<div id="${commonName}"<button onclick='togglePlant()'>${plant.commonName} </button>`
 
-// there will then be a for loop for the togglePlant function that will iterate through the array and only pull the card ...
-// ... with a commonName that matches its id
-
-//function togglePlant() {
-  //  if (listItem == document.getElementById(plant.commonName).value); {
-    //    plantInfo.style.display = "block";
-      //  }  
-    
-//}
-
-//make ul inside listItem that has info

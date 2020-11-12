@@ -1,12 +1,3 @@
-<!--TO DO
-    
-    MAKE MAIN NAV LOOK BETTER
-    MAKE PLANT LIST PAGE
-    MAKE PLANT SEARCH
-    SUBMIT 100 BASIC PLANTS
-    UPCOMING GUIDES PAGE - READ FROM DATABASE
-    FRONT PAGE
--->
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,29 +10,35 @@
 </head>
 
 <body>
-    <script src="script.js" async defer></script>
-    <script src="catalogue.js" async defer></script>
     
     <div class="wrapper">
         <header>
-            <div class="banner">
-                <h1>Planter</h1>
-            </div>
-            <div class="main-nav">
-                <a href="catalogue.html">Guides</a>
-                <a href="submit.html">Submit</a>
-                <a href="about.html">About</a>
-            </div>
+            <div class="topnav">
+                <a href="planter.html" class="active">Planter</a>
+                <!-- Navigation links (hidden by default) -->
+                <div id="myLinks">
+                  <a href="submit.html">Submit</a>
+                  <a href="catalogue.html">Catalogue</a>
+                  <a href="about.html">About</a>
+                </div>
+                <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
+                <a href="javascript:void(0);" class="icon" onClick="hamburger()">
+                  <i class="fa fa-bars"></i>
+                </a>
+              </div>
             
         </header>
         <main>
             <div class="main-content">
                 <h2>Current Guides</h2>
                 <ul id="plantList">
-                    <ul id="plantInfo" style="display:none"></ul>
+                    
                 </ul>
-            </div>
+                <div id="plantInfo">
 
+                </div>
+            </div>
+            
             
 
 
@@ -59,5 +56,8 @@
     </div>
     <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-database.js"></script>
+    <script src="script.js" async defer></script>
+    <script src="catalogue.js" async defer></script>
+
 </body>
 </html>

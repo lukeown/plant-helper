@@ -19,22 +19,21 @@
 
 </head>
 <body>
-    <script src="script.js" async defer></script>
     <div class="wrapper">
         <header> 
-            <div href="planter.html" class="banner">
-                <h1>Planter</h1>
-                <!-- <div class="search">
-                    <label for="search"></label>
-                    <input onClick="this.setSelectionRange(0, this.value.length)" type="text" id="search" placeholder="Find a plant guide"/>
-                </div> -->
-            </div>
-            
-            <div class="main-nav">
-                <a href="catalogue.html">Guides</a>
-                <a href="submit.html">Submit</a>
-                <a href="about.html">About</a>
-            </div>
+            <div class="topnav">
+                <a href="planter.html" class="active">Planter</a>
+                <!-- Navigation links (hidden by default) -->
+                <div id="myLinks">
+                  <a href="submit.html">Submit</a>
+                  <a href="catalogue.html">Catalogue</a>
+                  <a href="about.html">About</a>
+                </div>
+                <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
+                <a href="javascript:void(0);" class="icon" onclick="hamburger()">
+                  <i class="fa fa-bars"></i>
+                </a>
+              </div>
         </header>
         <main>
            <div class="main-content">
@@ -45,5 +44,7 @@
     </div>
     <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-database.js"></script>
+    <script src="script.js" async defer></script>
+
 </body>
 </html>

@@ -18,16 +18,20 @@
 
 </head>
 <body>
-    <script src="script.js" async defer></script>
     <header>
-        <div href="planter.html" class="banner">
-            <h1>Planter</h1>
-        </div>
-        <div class="main-nav">
-            <a href="catalogue.html">Guides</a>
-            <a href="submit.html">Submit</a>
-            <a href="about.html">About</a>
-        </div>
+        <div class="topnav">
+            <a href="planter.html" class="active">Planter</a>
+            <!-- Navigation links (hidden by default) -->
+            <div id="myLinks">
+              <a href="submit.html">Submit</a>
+              <a href="catalogue.html">Catalogue</a>
+              <a href="about.html">About</a>
+            </div>
+            <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
+            <a href="javascript:void(0);" class="icon" onclick="hamburger()">
+              <i class="fa fa-bars"></i>
+            </a>
+          </div>
     </header>
         <main>
             <div class="dashboard">
@@ -35,22 +39,24 @@
                     <h2 class="requestHeader">Request plant help</h2>
                     <div class="submitItem">
                         <label for="name"></label>
-                        <input onClick="this.setSelectionRange(0, this.value.length)" type="text" id="commonName" placeholder=" Common Name"/>
+                        <input onClick="this.setSelectionRange(0, this.value.length)" onfocus="this.placeholder=''" onblur="this.placeholder='Common Name'" type="text" id="commonName" placeholder=" Common Name"/>
                     </div>
                     <div class="submitItem">
                         <label for="sciName"></label>
-                        <input onClick="this.setSelectionRange(0, this.value.length)" type="text" id="sciName" placeholder=" Scientific Name"/>
+                        <input onClick="this.setSelectionRange(0, this.value.length)" onfocus="this.placeholder=''" onblur="this.placeholder='Scientific Name'" type="text" id="sciName" placeholder=" Scientific Name"/>
                     </div>
                     <div class="notes">
                         <label for="notes"></label>
-                        <input onClick="this.setSelectionRange(0, this.value.length)" type="text" id="notes" placeholder=" Notes"/>                </div>
+                        <input onClick="this.setSelectionRange(0, this.value.length)" onfocus="this.placeholder=''" onblur="this.placeholder='Notes'" type="text" id="notes" placeholder=" Notes"/>                </div>
                     <div class="form-submit">
                         <button id="sub-button" onclick="addPlant()" type='submit'>Request</button>
                     </div>
                 </form>
             </div>
         </main>
-    <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-database.js"></script>
+    <script src="script.js" async defer></script>
+
 </body>
 </html>

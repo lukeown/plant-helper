@@ -2,7 +2,56 @@
     box-sizing: border-box;
 }
 
+/* Style the navigation menu */
+.topnav {
+    background-color: white;
+  }
+  
+  /* Hide the links inside the navigation menu (except for logo/home) */
+  .topnav #myLinks {
+    display: none;
+  }
+  
+  /* Style navigation menu links */
+  .topnav a {
+    font-family: 'Fredoka One', cursive;
+    color: #4f724a;
+    text-shadow: 0 2px 1px rgba(48, 104, 73, 0.4);
+    font-size: 4vw;
+    line-height: 4vw;
+    padding:  2vw 3vw 0 2.2vw;
+  }
+  
+  /* Style the hamburger menu */
+  .topnav a.icon {
+    font-family: 'Fredoka One', cursive;
+    background: white;
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  
+  /* Add a grey background color on mouse-over */
+  .topnav a:hover {
+    background-color: white;
+    color: rgb(238, 143, 89);
+  }
+  
+  /* Style the active link (or home/logo) */
+  .active {
+    background-color: white;
+    color: green;
+  }
 
+/* Tablet Size */
+@media (min-width: 850px) {
+    h1 {
+        color: red;
+    }
+}
+
+/* Landscape */
 @media (orientation: landscape) {
     body {
         width: 90%;
@@ -61,6 +110,7 @@
     }
 }
 
+/* Landscape Large */
 @media (min-width: 850px), (orientation: landscape) {
     form {
         padding: 4vw;
@@ -157,6 +207,7 @@
         display: block;
     }
 }
+
 
 
 /* General Styles */
