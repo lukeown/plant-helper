@@ -21,7 +21,7 @@ function addPlantToList(plant) { // adds plant and info to button elements
                     <li>Water Needs: ${plant.water}</li>
                     <li>Common Issues: ${plant.issues}</li>
                 </ul>` // creates unordered list for each plant
-    var listItem = `<button id="${plant.commonName}" onClick='togglePlant(${plant.commonName})'> ${plant.commonName} </button>` // creates button for plant with id attaining to that plant
+    var listItem = `<button id="${plant.commonName}" onClick='togglePlant("${plant.commonName}")'> ${plant.commonName} </button>` // creates button for plant with id attaining to that plant
     
     document.getElementById('plantInfo').innerHTML += info;
     document.getElementById('plantList').innerHTML += listItem;
