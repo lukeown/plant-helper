@@ -12,29 +12,31 @@
 <body>
     
     <div class="wrapper">
-        <header>
-            <div class="topnav">
-                <a href="planter.html" class="active">Planter</a>
-                <!-- Navigation links (hidden by default) -->
-                <div id="myLinks">
-                  <a href="submit.html">Submit</a>
-                  <a href="catalogue.html">Catalogue</a>
-                  <a href="about.html">About</a>
-                </div>
-                <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
-                <a href="javascript:void(0);" class="icon" onClick="hamburger()">
-                  <i class="fa fa-bars"></i>
-                </a>
-              </div>
+        <header> 
+        
+            <a class="home-button" href="planter.html">Planter</a>
+            <div id="mySidebar" class="sidebar">
+              <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+              <a href="planter.html">Home</a>
+              <a href="catalogue.html">Guides</a>
+              <a href="submit.html">Submit</a>
+              <a href="about.html">About</a>
+            </div>
             
-        </header>
+            <div id="main">
+              <button class="openbtn" onclick="openNav()">&#9776;</button>
+              
+            </div>
+
+
+      </header>
         <main>
             <div class="main-content">
-                <h2>Current Guides</h2>
+                <h2 class="list-header">Current Guides</h2>
                 <ul id="plantList">
                     
                 </ul>
-                <div id="plantInfo">
+                <div class="info-box" id="plantInfo">
 
                 </div>
             </div>

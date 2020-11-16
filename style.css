@@ -2,116 +2,62 @@
     box-sizing: border-box;
 }
 
-/* Style the navigation menu */
-.topnav {
-    background-color: white;
-  }
-  
-  /* Hide the links inside the navigation menu (except for logo/home) */
-  .topnav #myLinks {
-    display: none;
-  }
-  
-  /* Style navigation menu links */
-  .topnav a {
-    font-family: 'Fredoka One', cursive;
-    color: #4f724a;
-    text-shadow: 0 2px 1px rgba(48, 104, 73, 0.4);
-    font-size: 4vw;
-    line-height: 4vw;
-    padding:  2vw 3vw 0 2.2vw;
-  }
-  
-  /* Style the hamburger menu */
-  .topnav a.icon {
-    font-family: 'Fredoka One', cursive;
-    background: white;
-    display: block;
-    position: absolute;
-    right: 0;
+/* Sidebar menu */
+.sidebar {
+    height: 100%;
+    width: 0; /* Change width with javascript function in script.js */
+    position: fixed;
+    z-index: 1;
     top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
   }
   
-  /* Add a grey background color on mouse-over */
-  .topnav a:hover {
+  .sidebar a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    width: 100%;
+    transition: 0.2s;
+    float: right;
+  }
+  
+  .sidebar a:hover {
+    color: #f1f1f1;
+  }
+  
+  .sidebar .closebtn {
+    display: block;
+    width: 100%;
+    text-align: right;
+    padding-right: 32px;
+  }
+  
+  .openbtn {
+    font-size: 3vw;
+    cursor: pointer;
     background-color: white;
+    color: #539e66;
+    border: none;
+    float: right;
+  }
+  
+  .openbtn:hover {
     color: rgb(238, 143, 89);
   }
   
-  /* Style the active link (or home/logo) */
-  .active {
-    background-color: white;
-    color: green;
+  #main {
+    transition: margin-left .5s;
+    padding: 20px;
   }
-
-/* Tablet Size */
-@media (min-width: 850px) {
-    h1 {
-        color: red;
-    }
-}
-
-/* Landscape */
-@media (orientation: landscape) {
-    body {
-        width: 90%;
-        margin: auto;
-    }
-    h1 {
-        font-family: 'Fredoka One', cursive;
-        color: #4f724a;
-        text-shadow: 0 2px 1px rgba(48, 104, 73, 0.4);
-        font-size: 7vw;
-        line-height: 7vw;
-        padding:  2vw 3vw 0 2.2vw;
-        margin: 0 3vw 0 0;
-    }
-    h2 {
-        font-size: 5vw;
-    }
-    .requestHeader {
-        padding: 0 0 2vw 0;
-    }
-    .banner {
-        background: white;
-        padding-top: 0;
-        display: flex;
-        float: left;
-        width: 50%;
-        margin: 0;
-    }
-    .main-nav {
-        float: right;
-        display: flex;
-        padding: 0;
-        width: 40%;
-        margin: 0 0 0 auto;
-    }
-    #sub-button:hover {
-        background: rgb(238, 143, 89);
-    }
-    a {
-        color: #4f724a;
-        padding: 1.5vw 2vw 0 0;
-    }
-    a:hover {
-        text-decoration: none;
-        color: rgb(238, 143, 89);
-    }
-    p, a {
-        font-family: 'Raleway', sans-serif;
-        float: right;
-        font-size: 3vw;
-    }
-    header {
-        display: flex;
-        background: white;
-        width: 100%;
-    }
-}
+  
 
 /* Landscape Large */
-@media (min-width: 850px), (orientation: landscape) {
+@media (min-width: 1000px), (orientation: landscape) {
     form {
         padding: 4vw;
     }
@@ -155,18 +101,22 @@
         background-color: #539e66;
         color: white;
     }
-    
-    .requestHeader {
+    .list-header {
+        text-align: center;
+        padding-bottom: 2vw;
+    }
+    .submitHeader {
         padding: 0 0 2vw 0;
     }
+    
     form {
         text-align: center;
     }
     input {
         display: inline-flex;
-        width: 20vw;
+        width: 25vw;
         font-family: 'Raleway', sans-serif;
-        font-size: 18pt;
+        font-size: 1.8vw;
         text-align: center;
         color: grey;
         background: rgb(215, 224, 216);
@@ -179,9 +129,8 @@
     .form-submit button {
         color: white;
         background-color: #4f724a;
-        width: 20vw;
+        width: 25vw;
         font-family: 'Raleway', sans-serif;
-        font-size: 18pt;
         padding: 10px;
         margin: auto;
         border: none;
@@ -196,21 +145,132 @@
         padding: 0 1vw 0 1vw;
         display: inline;
     }
-    .notes {
-        padding: 2vw 0 0 0;
-        display: flex;
-        margin: auto;
+    #notes {
+        display: block;
+    }
+    #email {
+        display: block;
     }
     .form-submit {
         margin-bottom: 0;
         padding: 2vw 0 0 0;
         display: block;
     }
+    .plant-button {
+        font-size: 2vw;
+    }
+    .plant-button:active {
+        border: none;
+        color: rgb(238, 143, 89);
+    }
+    .plant-button {
+        border: none;
+        display: flex;
+        background: white;
+    }
+    #plantList {
+        float: left;
+    }
+    .info-box {
+        border: white 4vw solid;
+        display: flex;
+        float: right;
+    }
 }
 
+/* Landscape General */
+@media (orientation: landscape) {
+    body {
+        width: 90%;
+        margin: auto;
+    }
+    h1 {
+        font-family: 'Fredoka One', cursive;
+        color: #4f724a;
+        text-shadow: 0 2px 1px rgba(48, 104, 73, 0.4);
+        font-size: 7vw;
+        line-height: 7vw;
+        padding:  2vw 3vw 0 2.2vw;
+        margin: 0 3vw 0 0;
+    }
+    h2 {
+        font-size: 5vw;
+    }
+    form {
+        padding: 1vw;
+    }
+    .requestHeader {
+        padding: 0 0 2vw 0;
+    }
+    .aboutHeader {
+        text-align: center;
+    }
+    .banner {
+        background: white;
+        padding-top: 0;
+        display: flex;
+        float: left;
+        width: 50%;
+        margin: 0;
+    }
+    .main-nav {
+        float: right;
+        display: flex;
+        padding: 0;
+        width: 40%;
+        margin: 0 0 0 auto;
+    }
+    .main-content {
+        padding: 5vw 0 0 0;
+    }
+    #sub-button:hover {
+        background: rgb(238, 143, 89);
+    }
+    a {
+        color: #4f724a;
+        padding: 1.5vw 2vw 0 0;
+    }
+    a:hover {
+        text-decoration: none;
+        color: rgb(238, 143, 89);
+    }
+    p, a {
+        font-family: 'Raleway', sans-serif;
+        float: right;
+        font-size: 2.5vw;
+    }
+    header {
+        display: inline;
+        background: white;
+        width: 100%;
+    }
+    .home-button {
+        font-family: 'Fredoka One', cursive;
+        color: #4f724a;
+        font-size: 5vw;
+        padding: 0 0 7vw 2vw;
+        margin: 0;
+        float: left;
+    }
+    .plant-button {
+        color: black;
+    }
+    .plant-button:hover {
+        color: rgb(238, 143, 89);
+    }
+    .plant-button:active {
+        border: none;
+        color: rgb(238, 143, 89);
+    }
+    .plant-button {
+        border: none;
+        display: flex;
+        background: white;
+    }
+    
+}
 
-
-/* General Styles */
+/* Mobile First Portrait */
 @media (max-width: 849px), (orientation: portrait) {
     body {
         margin: 0;
@@ -219,6 +279,8 @@
     header {
         border-bottom: 5px white solid;
         background: white;
+        width: 100%;
+        display: flex;
     }
     main {
         height: 100%;
@@ -234,11 +296,13 @@
         position: relative;
         width: 70vw;
         font-family: 'Raleway', sans-serif;
+        text-align: center;
         font-size: 5vw;
         padding: 4vw;
         margin-bottom: 4vw;
         border: none;
         border-radius: 8px;
+        background: rgb(215, 224, 216);
         box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     }
     .banner {
@@ -260,15 +324,46 @@
         border-radius: 20px;
         opacity: .8;
     }
+    .sidebar a {
+        padding: 8px 8px 8px 32px;
+        text-decoration: none;
+        font-size: 5vw;
+        color: #818181;
+        display: block;
+        width: 100%;
+        transition: 0.2s;
+        float: right;
+      }
+    .aboutHeader {
+        padding: 0 0 2vw 0;
+    }
     .requestHeader {
         padding: 0 0 4vw 0;
+    }
+    .list-header {
+        text-align: center;
     }
     .button {
         font-family: 'Raleway', sans-serif;
         background-color: #539e66;
         color: white;
     }
-    
+    .home-button {
+        font-family: 'Fredoka One', cursive;
+        color: #4f724a;
+        text-shadow: 0 4px 0 rgba(0,0,0, .4);
+        font-size: 10vw;
+        padding: 0 0 7vw 2vw;
+        margin: 0;
+        float: left;
+    }
+    .openbtn {
+        position: absolute;
+        right: 0;
+        padding: 1vw 2vw 0 0;
+        font-size: 10vw;
+        line-height: 10vw;
+    }
     .form-submit button {
         color: white;
         background-color: #4f724a;
@@ -284,7 +379,7 @@
         background: rgb(238, 143, 89);
     }
     .submitItem, .form-submit, .notes {
-        margin-bottom: 5vw;
+        margin-bottom: 1vw;
         padding: 0 0 0 0;
     }
     .search {
@@ -292,15 +387,17 @@
         margin: auto;
         padding-bottom: 5vw;
     }
-    .notes {
-        display: flex;
-    }
     .main-content {
         position: relative;
         background: white;
-        margin: 0;
-        width: 90%;
+        margin: auto;
+        width: 75%;
         padding-left: 20px;
+    }
+    .plant-button {
+        border: none;
+        display: flex;
+        background: white;
     }
 
     /* Typography */
@@ -316,7 +413,7 @@
     h2 {
         font-family: 'Raleway', sans-serif;
         color: grey;
-        font-size: 80px;
+        font-size: 5vw;
     }
     h3 {
         font-family: 'Raleway', sans-serif;
@@ -326,7 +423,7 @@
     }
     p, a {
         font-family: 'Raleway', sans-serif;
-        font-size: 7vw;
+        font-size: 4vw;
         padding: 0;
         margin: auto;
         color: #525653;
@@ -339,7 +436,13 @@
         font-size: 20vw;
         margin-bottom: 2vw;
     }
-
+    .plant-button {
+        font-size: 4vw;
+    }
+    .plant-button:active {
+        border: none;
+        color: rgb(238, 143, 89);
+    }
     /* Navigation */
     a:link {
         color: #525653;

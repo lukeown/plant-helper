@@ -20,20 +20,25 @@ function addPlant() {
   var commonName = document.getElementById("commonName").value
   var sciName = document.getElementById("sciName").value
   var notes = document.getElementById("notes").value
+  var email = document.getElementById("email").value
 
   console.log(commonName + ' ' + sciName + ': ' + notes)
   recommendations.push({
     "commonName": commonName,
     "sciName": sciName,
     "notes": notes,
+    "email": email
+  
 });
 }
 
-function hamburger() {
-  var x = document.getElementById("myLinks");
-  if (x.style.display === "none") {
-    x.style.display = "flex";
-  } else {
-    x.style.display = "none";
-  }
+function openNav() {
+  document.getElementById("mySidebar").style.width = "250px";
+  document.getElementById("main").style.marginLeft = "250px";
+}
+
+/* Set the width of the sidebar to 0 and the left margin of the page content to 0 */
+function closeNav() {
+  document.getElementById("mySidebar").style.width = "0";
+  document.getElementById("main").style.marginLeft = "0";
 }
