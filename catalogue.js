@@ -35,14 +35,15 @@ for (i = 0; i < plants.length; i++) {
 }
 function addPlantToList(plant) { // adds plant and info to button elements
     //should make button that targets only the info of that plant - not the whole array - find array method that seperates by index?
-    var info = `<ul style="display:none" id="info-${plant.commonName}" >
+    var info = `<ul style="display:none" id="info-${plant.commonName}" class="infoList" >
+                    <h3>${plant.commonName}</h3>
                     <li>Scientific Name: ${plant.sciName}</li>
                     <li>Plant Type: ${plant.type}</li>
                     <li>Light Needs: ${plant.light}</li>
                     <li>Water Needs: ${plant.water}</li>
                     <li>Common Issues: ${plant.issues}</li>
                 </ul>` // creates unordered list for each plant
-    var listItem = `<button id="${plant.commonName}" class="plant-button" onClick='togglePlant("${plant.commonName}")'> ${plant.commonName} </button>` // creates button for plant with id attaining to that plant
+    var listItem = `<button id="${plant.commonName}" class="plant-button" onClick='togglePlant("${plant.commonName}")' alt="${plant.commonName}"> ${plant.commonName} </button>` // creates button for plant with id attaining to that plant
     
     document.getElementById('plantInfo').innerHTML += info;
     document.getElementById('plantList').innerHTML += listItem;
@@ -50,11 +51,30 @@ function addPlantToList(plant) { // adds plant and info to button elements
 function togglePlant(plantName) { // needs to take id as parameter
     var componentID = `info-${plantName}`
     var component = document.getElementById(componentID)
-    if ( component.style.display == 'none') {// && document.getElementById(`${plantInfo.firstChild} == ${plant}`)) {//toggle the ul with matching id 
+    var modal = document.getElementById("myModal");
+    openPlant += plantName
+    console.log(openPlant)
+    if ( component.style.display == 'none' ) {// && document.getElementById(`${plantInfo.firstChild} == ${plant}`)) {//toggle the ul with matching id 
         component.style.display ='block';
+        modal.style.display = 'block';
+        openPlant + `${plantName}`
+    } else if ( modal.style.display == 'block' ) {
+        component.style.display = 'none';
+        modal.style.display = 'none';
     } else {
         component.style.display = 'none';//instead of displaying plantInfo, I need to display the info of a specific plant
+        modal.style.display = 'none'
     }
 }
+function modalClose() {
+    togglePlant(openPlant)
+    openPlant = ''
+}
+
+// Get the modal
+
+var card = document.getElementsByClassName("plant-button");
+var modalCard = document.getElementById("infoList");
+let openPlant = ''
 
 

@@ -1,6 +1,31 @@
 * {
     box-sizing: border-box;
 }
+/* Modal Background */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 5vh; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+/* Modal Zoom */
+.info-box {
+    animation-name: zoom;
+    animation-duration: 0.3s;
+}
+
+@keyframes zoom {
+    from {transform:scale(0)}
+    to {transform:scale(1)}
+}
+
 
 /* Sidebar menu */
 .sidebar {
@@ -171,10 +196,32 @@
     #plantList {
         float: left;
     }
+    
+    /* Modal */
+    ul {
+        list-style-type: none;
+        padding: 15%;
+    }
+    ul>h3 {
+        text-align: center;
+    }
+    
+    /* Plant Info Box - inside modal */
     .info-box {
-        border: white 4vw solid;
-        display: flex;
-        float: right;
+        background: white;
+        width: 40%;
+        height: 40vw;
+        margin: auto;
+    }
+    /* The Close Button */
+    .close {
+        position: absolute;
+        top: 15px;
+        right: 35px;
+        color: #f1f1f1;
+        font-size: 4vw;
+        font-weight: bold;
+        transition: 0.3s;
     }
 }
 
@@ -413,14 +460,18 @@
     h2 {
         font-family: 'Raleway', sans-serif;
         color: grey;
-        font-size: 5vw;
+        font-size: 6vw;
+    }
+    li {
+        font-family: sans-serif;
+        font-size: 4vw;
     }
     h3 {
         font-family: 'Raleway', sans-serif;
-        margin: 0;
-        font-size: 6vw;
-        color: white;
+        color: grey;
+        font-size: 5vw;
     }
+
     p, a {
         font-family: 'Raleway', sans-serif;
         font-size: 4vw;
@@ -459,6 +510,31 @@
         display: flex;
         width: 100%;
         padding-top: 60px;
+    }
+    /* Modal */
+    ul {
+        list-style-type: none;
+        padding: 5%;
+    }
+    ul>h3 {
+        text-align: center;
+    }
+    /* Plant Info Box - inside modal */
+    .info-box {
+        background: white;
+        width: 80%;
+        height: 80vw;
+        margin: auto;
+    }
+    /* The Close Button */
+    .close {
+        position: absolute;
+        top: 5vw;
+        right: 5vw;
+        color: #f1f1f1;
+        font-size: 4vw;
+        font-weight: bold;
+        transition: 0.3s;
     }
 }
 
