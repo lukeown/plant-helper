@@ -188,7 +188,7 @@
     /* Modal */
     ul {
         list-style-type: none;
-        padding: 15%;
+        padding-left: 15%;
     }
     ul>h3 {
         text-align: center;
