@@ -144,6 +144,7 @@
         background-color: #4f724a;
         width: 25vw;
         font-family: 'Raleway', sans-serif;
+        font-size: 1.8vw;
         padding: 10px;
         margin: auto;
         border: none;
@@ -166,7 +167,7 @@
     }
     .form-submit {
         margin-bottom: 0;
-        padding: 2vw 0 0 0;
+        padding: 2rem 0 0 0;
         display: block;
     }
     .plant-button {
@@ -183,22 +184,23 @@
     }
     #plantList {
         float: left;
+        padding-left: 15%;
     }
     
     /* Modal */
     ul {
         list-style-type: none;
-        padding-left: 15%;
     }
     ul>h3 {
         text-align: center;
+        padding-top: 5vw;
     }
     
     /* Plant Info Box - inside modal */
     .info-box {
         background: white;
-        width: 40%;
-        height: 40vw;
+        width: 80vh;
+        height: 80%;
         margin: auto;
     }
     /* The Close Button */
@@ -230,6 +232,12 @@
     }
     h2 {
         font-size: 5vw;
+    }
+    li {
+        padding: 0 0 0 7%;
+    }
+    #plantist {
+        padding-left: 15%;
     }
     form {
         padding: 1vw;
@@ -354,6 +362,9 @@
       #main {
         transition: margin-left .5s;
         padding: 20px;
+      }
+      .infoList {
+          padding-left: 0;
       }
     
 }
@@ -501,6 +512,7 @@
     li {
         font-family: sans-serif;
         font-size: 4vw;
+        padding-left: 5%;
     }
     h3 {
         font-family: 'Raleway', sans-serif;
@@ -580,6 +592,7 @@
     }
     ul>h3 {
         text-align: center;
+        padding-top: 5vw;
     }
     /* Plant Info Box - inside modal */
     .info-box {
