@@ -32,12 +32,29 @@ function addPlant() {
 });
 }
 
+var mq = window.matchMedia( "(orientation: portrait)")
+
 function openNav() {
+  if ( mq.matches ) {
+    document.getElementById("mySidebar").style.height = "24vw";
+    document.getElementById("main").style.marginTop = "22vw";
+    document.getElementById("mySidebar").style.width = "100%";
+
+  } else {
   document.getElementById("mySidebar").style.width = "250px";
   document.getElementById("main").style.marginLeft = "250px";
+  document.getElementById("mySidebar").style.height = "100%";
+  }
 }
 
 function closeNav() {
+  if ( mq.matches ) {
+    document.getElementById("main").style.marginTop = "0";
+    document.getElementById("mySidebar").style.height = "0";
+
+  } else {
   document.getElementById("mySidebar").style.width = "0";
   document.getElementById("main").style.marginLeft = "0";
+  }
 }
+
