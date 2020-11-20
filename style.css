@@ -87,7 +87,7 @@
     h3 {
         font-family: 'Raleway', sans-serif;
         color: grey;
-        font-size: 20pt;
+        font-size: 30pt;
         margin: 0;
         padding-bottom: 2vw;
     }
@@ -193,7 +193,11 @@
     }
     ul>h3 {
         text-align: center;
-        padding-top: 5vw;
+        padding-top: 40px;
+        font-size: 3vw;
+    }
+    ul>li {
+        font-size: 2vw;
     }
     
     /* Plant Info Box - inside modal */
